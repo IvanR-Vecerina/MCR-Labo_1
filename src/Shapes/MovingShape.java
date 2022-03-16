@@ -22,12 +22,25 @@ public abstract class MovingShape {
     public void move(int width, int height) {
         position.translate(movementVector.x, movementVector.y);
 
-        if (position.x < 0 || position.x + size > width)
+        if (position.x < 0) {
             movementVector.x = -movementVector.x;
+            position.x = 0;
+        }
 
+        if (position.x + size > width) {
+            movementVector.x = -movementVector.x;
+            position.x = width - size;
+        }
 
-        if (position.y < 0 || position.y + size > height)
+        if (position.y < 0) {
             movementVector.y = -movementVector.y;
+            position.y = 0;
+        }
+
+        if (position.y + size > height) {
+            movementVector.y = -movementVector.y;
+            position.y = height - size;
+        }
     }
 
     public abstract void paintShape(Graphics g);

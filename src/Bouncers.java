@@ -4,15 +4,24 @@ import Shapes.MovingShape;
 import Shapes.MovingSquare;
 
 import java.awt.*;
+import java.util.LinkedList;
 
-public class Bouncer {
+public class Bouncers {
+
+    private LinkedList<Bouncable> bouncers;
+
+    public Bouncers(){}
+
+    public void run(){
+
+    }
     public static void main(String[] args) {
         final int NB_SHAPES = 100;
         BouncerDisplayer bouncerDisplayer = BouncerDisplayer.getInstance();
         MovingShape movingShapes[] = new MovingShape[NB_SHAPES];
         Graphics graphics;
 
-        bouncerDisplayer.setTitle("labo 1b");
+        bouncerDisplayer.setTitle("Labo 1c");
 
         for (int i = 0; i < movingShapes.length; i++) {
             if ((Math.random() * 2 > 1)) {
@@ -34,9 +43,7 @@ public class Bouncer {
 
                 bouncerDisplayer.repaint();
 
-
-
-                Thread.sleep(40);
+                Thread.sleep(50);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();

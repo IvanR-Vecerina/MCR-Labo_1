@@ -2,6 +2,7 @@ package Display;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
 
 public class BouncerDisplayer implements Displayer {
     private static BouncerDisplayer instance;
@@ -60,5 +61,10 @@ public class BouncerDisplayer implements Displayer {
     @Override
     public void setTitle(String title) {
         frame.setTitle(title);
+    }
+
+    @Override
+    public void addKeyListener(KeyAdapter ka) {
+        frame.addKeyListener(ka);
     }
 }

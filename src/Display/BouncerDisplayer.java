@@ -9,7 +9,7 @@ import java.security.Key;
 
 public class BouncerDisplayer implements Displayer {
     private static BouncerDisplayer instance;
-    private final JFrame frame;
+    public final JFrame frame;
     private final JPanel panel;
 
     private BouncerDisplayer() {

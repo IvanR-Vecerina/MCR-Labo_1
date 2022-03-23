@@ -3,6 +3,7 @@ import Shapes.MovingCircle;
 import Shapes.MovingShape;
 import Shapes.MovingSquare;
 
+import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -12,6 +13,7 @@ import java.util.Random;
 
 public class Bouncers {
 
+    private LinkedList<Bouncable> bouncers;
     private Random rand;
 
     public Bouncers(){}
@@ -19,16 +21,16 @@ public class Bouncers {
     public void run(){
         final int NB_SHAPES = rand.nextInt(100);
         BouncerDisplayer bouncerDisplayer = BouncerDisplayer.getInstance();
-        MovingShape[] movingShapes = new MovingShape[NB_SHAPES];
+        bouncers = new LinkedList<Bouncable>(NB_SHAPES);
         Graphics graphics;
 
         bouncerDisplayer.setTitle("Labo 1c");
 
-        for (int i = 0; i < movingShapes.length; i++) {
+        for (int i = 0; i < bouncers.size(); i++) {
             if ((Math.random() * 2 > 1)) {
-                movingShapes[i] = new MovingCircle(bouncerDisplayer.getWidth(), bouncerDisplayer.getHeight());
+                bouncers.add(new MovingCircle(bouncerDisplayer.getWidth(), bouncerDisplayer.getHeight()));
             } else {
-                movingShapes[i] = new MovingSquare(bouncerDisplayer.getWidth(), bouncerDisplayer.getHeight());
+                bouncers.add(new MovingSquare(bouncerDisplayer.getWidth(), bouncerDisplayer.getHeight()));
             }
         }
 
@@ -36,10 +38,10 @@ public class Bouncers {
             while (true) {
                 graphics = bouncerDisplayer.getGraphics();
 
-                for (MovingShape movingShape : movingShapes) {
-                    movingShape.move(bouncerDisplayer.getWidth(), bouncerDisplayer.getHeight());
+                for (Bouncable bouncer : bouncers) {
+                    bouncer.move(bouncerDisplayer.getWidth(), bouncerDisplayer.getHeight());
 
-                    movingShape.paintShape(graphics);
+                    bouncer.paintShape(graphics);
                 }
 
                 bouncerDisplayer.repaint();
@@ -50,7 +52,18 @@ public class Bouncers {
                             case 'e':
                                 break;
                             case 'b':
-
+                                for(int i = 0; i < 10; ++i){
+                                    //bouncers.add();
+                                    //bouncers.add();
+                                }
+                                break;
+                            case 'f':
+                                for(int i = 0; i < 10; ++i){
+                                    //bouncers.add();
+                                    //bouncers.add();
+                                }
+                            case 'q':
+                                bouncerDisplayer.frame.dispose();
                         }
                     }
                 });

@@ -3,6 +3,9 @@ package Display;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.security.Key;
 
 public class BouncerDisplayer implements Displayer {
     private static BouncerDisplayer instance;
@@ -23,7 +26,6 @@ public class BouncerDisplayer implements Displayer {
         panel.setSize(1280, 720);
         panel.setBackground(Color.WHITE);
         panel.setOpaque(false);
-
     }
 
     public static BouncerDisplayer getInstance() {

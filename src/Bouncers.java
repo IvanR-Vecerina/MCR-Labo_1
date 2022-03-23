@@ -4,21 +4,22 @@ import Shapes.MovingShape;
 import Shapes.MovingSquare;
 
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.LinkedList;
+import java.util.Random;
 
 public class Bouncers {
 
-    private LinkedList<Bouncable> bouncers;
+    private Random rand;
 
     public Bouncers(){}
 
     public void run(){
-
-    }
-    public static void main(String[] args) {
-        final int NB_SHAPES = 100;
+        final int NB_SHAPES = rand.nextInt(100);
         BouncerDisplayer bouncerDisplayer = BouncerDisplayer.getInstance();
-        MovingShape movingShapes[] = new MovingShape[NB_SHAPES];
+        MovingShape[] movingShapes = new MovingShape[NB_SHAPES];
         Graphics graphics;
 
         bouncerDisplayer.setTitle("Labo 1c");
@@ -42,13 +43,26 @@ public class Bouncers {
                 }
 
                 bouncerDisplayer.repaint();
+                bouncerDisplayer.addKeyListener(new KeyAdapter() {
+                    @Override
+                    public void keyTyped(KeyEvent e) {
+                        switch (e.getKeyChar()){
+                            case 'e':
+                                break;
+                            case 'b':
+
+                        }
+                    }
+                });
 
                 Thread.sleep(50);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-
     }
+    public static void main(String[] args) {
+        new Bouncers().run();
+    }
+
 }

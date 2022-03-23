@@ -1,7 +1,7 @@
 import Display.BouncerDisplayer;
-import Shapes.MovingCircle;
+import Shapes.Circles.MovingCircle;
 import Shapes.MovingShape;
-import Shapes.MovingSquare;
+import Shapes.Squares.MovingSquare;
 
 import javax.swing.*;
 import java.awt.*;

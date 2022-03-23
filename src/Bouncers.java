@@ -1,13 +1,10 @@
 import Display.BouncerDisplayer;
 import Shapes.Circles.MovingCircle;
-import Shapes.MovingShape;
 import Shapes.Squares.MovingSquare;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.util.LinkedList;
 import java.util.Random;
 

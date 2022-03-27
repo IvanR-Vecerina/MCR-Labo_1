@@ -1,13 +1,11 @@
 import Display.BouncerDisplayer;
+import Shapes.Bouncable;
 import Shapes.Circles.MovingCircle;
-import Shapes.MovingShape;
 import Shapes.Squares.MovingSquare;
 
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -21,12 +19,12 @@ public class Bouncers {
     public void run(){
         final int NB_SHAPES = rand.nextInt(100);
         BouncerDisplayer bouncerDisplayer = BouncerDisplayer.getInstance();
-        bouncers = new LinkedList<Bouncable>(NB_SHAPES);
+        bouncers = new LinkedList<Bouncable>();
         Graphics graphics;
 
         bouncerDisplayer.setTitle("Labo 1c");
 
-        for (int i = 0; i < bouncers.size(); i++) {
+        for (int i = 0; i < NB_SHAPES; i++) {
             if ((Math.random() * 2 > 1)) {
                 bouncers.add(new MovingCircle(bouncerDisplayer.getWidth(), bouncerDisplayer.getHeight()));
             } else {

@@ -3,14 +3,12 @@ package Display;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.security.Key;
 
 public class BouncerDisplayer implements Displayer {
     private static BouncerDisplayer instance;
     public final JFrame frame;
     private final JPanel panel;
+    private Graphics2D graphic;
 
     private BouncerDisplayer() {
         super();
@@ -48,11 +46,11 @@ public class BouncerDisplayer implements Displayer {
 
     @Override
     public Graphics2D getGraphics() {
-        Graphics2D graphics2D = (Graphics2D) panel.getGraphics();
-        graphics2D.setColor(Color.WHITE);
-        graphics2D.fillRect(0, 0, panel.getWidth(), panel.getHeight());
+        graphic = (Graphics2D) panel.getGraphics();
+        graphic.setColor(Color.WHITE);
+        graphic.fillRect(0, 0, panel.getWidth(), panel.getHeight());
 
-        return graphics2D;
+        return graphic;
     }
 
     @Override

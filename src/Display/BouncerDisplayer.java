@@ -6,9 +6,8 @@ import java.awt.event.KeyAdapter;
 
 public class BouncerDisplayer implements Displayer {
     private static BouncerDisplayer instance;
-    public final JFrame frame;
+    private final JFrame frame;
     private final JPanel panel;
-    private Graphics2D graphic;
 
     private BouncerDisplayer() {
         super();
@@ -23,7 +22,6 @@ public class BouncerDisplayer implements Displayer {
 
         panel.setSize(1280, 720);
         panel.setBackground(Color.WHITE);
-        panel.setOpaque(false);
     }
 
     public static BouncerDisplayer getInstance() {
@@ -46,11 +44,8 @@ public class BouncerDisplayer implements Displayer {
 
     @Override
     public Graphics2D getGraphics() {
-        graphic = (Graphics2D) panel.getGraphics();
-        graphic.setColor(Color.WHITE);
-        graphic.fillRect(0, 0, panel.getWidth(), panel.getHeight());
 
-        return graphic;
+        return (Graphics2D) panel.getGraphics();
     }
 
     @Override

@@ -7,10 +7,16 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.LinkedList;
 
+/**
+ * @author André Marques Nora & Ivan Vecerina
+ */
 public class Bouncers {
 
     private final LinkedList<Bouncable> bouncers;
 
+    /**
+     * Constructor for the Bouncers class
+     */
     public Bouncers() {
         bouncers = new LinkedList<>();
 
@@ -37,6 +43,10 @@ public class Bouncers {
         });
     }
 
+    /**
+     * Method to add bouncable object in the application
+     * @param shapeFactory Factory for the wanted type of shapes
+     */
     private void spawnShapes(ShapeFactory shapeFactory) {
         for(int i = 0; i < 10; ++i){
             bouncers.add(shapeFactory.createCircle());
@@ -44,6 +54,9 @@ public class Bouncers {
         }
     }
 
+    /**
+     * Method to start the application
+     */
     public void run(){
         new Timer(25, e -> {
             BouncerDisplayer.getInstance().repaint();

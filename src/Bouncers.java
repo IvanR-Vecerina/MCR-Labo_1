@@ -2,11 +2,10 @@ import Display.BouncerDisplayer;
 import Factories.*;
 import Shapes.Bouncable;
 
+import javax.swing.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.LinkedList;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class Bouncers {
 
@@ -46,18 +45,14 @@ public class Bouncers {
     }
 
     public void run(){
-        Timer timer = new Timer();
+        new Timer(25, e -> {
+            BouncerDisplayer.getInstance().repaint();
 
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
                 for (Bouncable bouncer : bouncers) {
                     bouncer.move();
                     bouncer.draw();
                 }
-                BouncerDisplayer.getInstance().repaint();
-            }
-        },0,32);
+        }).start();
     }
 
     public static void main(String[] args) {

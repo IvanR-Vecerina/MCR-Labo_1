@@ -3,16 +3,25 @@ package Display;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
+import java.awt.image.BufferedImage;
 
 public class BouncerDisplayer implements Displayer {
     private static BouncerDisplayer instance;
     private final JFrame frame;
     private final JPanel panel;
+    private BufferedImage image;
+    private Graphics2D graphic;
 
     private BouncerDisplayer() {
         super();
         frame = new JFrame();
-        panel = new JPanel();
+        panel = new JPanel() {
+            @Override
+            public void paint(Graphics g){
+                super.paint(g);
+                g.drawImage(image, 0,0, this);
+            }
+        };
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().add(panel, BorderLayout.CENTER);
@@ -45,12 +54,14 @@ public class BouncerDisplayer implements Displayer {
     @Override
     public Graphics2D getGraphics() {
 
-        return (Graphics2D) panel.getGraphics();
+        return graphic;
     }
 
     @Override
     public void repaint() {
-        panel.paint(panel.getGraphics());
+        image = new BufferedImage(getWidth(), getHeight(), BufferedImage.TYPE_INT_ARGB);
+        graphic = image.createGraphics();
+        panel.repaint();
     }
 
     @Override

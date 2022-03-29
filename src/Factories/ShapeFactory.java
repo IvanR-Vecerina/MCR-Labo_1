@@ -11,7 +11,11 @@ public abstract class ShapeFactory {
     private static final HollowFactory HOLLOW_FACTORY = new HollowFactory();
     private static final SolidFactory SOLID_FACTORY = new SolidFactory();
 
-
+    /**
+     * Method to get the factory given a type
+     * @param type The shape's type
+     * @return The factory for a given type
+     */
     public static ShapeFactory getFactory(ShapeType type) {
         ShapeFactory factory = null;
         switch (type) {

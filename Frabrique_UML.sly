@@ -1,19 +1,79 @@
 <?xml version="1.0" encoding="iso-8859-15" standalone="no"?>
 <classDiagram>
   <diagramElements defaultViewEntities="ALL" defaultViewEnum="true" defaultViewMethods="TYPE_AND_NAME" defaultVisibleTypes="true" informations="" name="Fabrique">
+    <association aggregation="NONE" direction="BIDIRECTIONAL" id="20109" name="">
+      <role componentId="17362" name="" visibility="PRIVATE">
+        <multiplicity>
+          <min>1</min>
+          <max>1</max>
+        </multiplicity>
+      </role>
+      <role componentId="17933" name="" visibility="PRIVATE">
+        <multiplicity>
+          <min>1</min>
+          <max>1</max>
+        </multiplicity>
+      </role>
+    </association>
+    <association aggregation="NONE" direction="BIDIRECTIONAL" id="20083" name="">
+      <role componentId="16644" name="" visibility="PRIVATE">
+        <multiplicity>
+          <min>1</min>
+          <max>1</max>
+        </multiplicity>
+      </role>
+      <role componentId="17954" name="" visibility="PRIVATE">
+        <multiplicity>
+          <min>1</min>
+          <max>1</max>
+        </multiplicity>
+      </role>
+    </association>
+    <entity entityType="ENUM" id="20043" name="ShapeType">
+      <EnumValue>HOLLOW</EnumValue>
+      <EnumValue>SOLID</EnumValue>
+    </entity>
+    <association aggregation="NONE" direction="BIDIRECTIONAL" id="20026" name="">
+      <role componentId="17933" name="" visibility="PRIVATE">
+        <multiplicity>
+          <min>1</min>
+          <max>1</max>
+        </multiplicity>
+      </role>
+      <role componentId="17908" name="" visibility="PRIVATE">
+        <multiplicity>
+          <min>1</min>
+          <max>1</max>
+        </multiplicity>
+      </role>
+    </association>
+    <association aggregation="NONE" direction="BIDIRECTIONAL" id="20017" name="">
+      <role componentId="17954" name="" visibility="PRIVATE">
+        <multiplicity>
+          <min>1</min>
+          <max>1</max>
+        </multiplicity>
+      </role>
+      <role componentId="17908" name="" visibility="PRIVATE">
+        <multiplicity>
+          <min>1</min>
+          <max>1</max>
+        </multiplicity>
+      </role>
+    </association>
     <dependency id="20007" label="">
       <source>17954</source>
       <target>17887</target>
     </dependency>
-    <dependency id="20005" label="use">
+    <dependency id="20005" label="">
       <source>17954</source>
       <target>17866</target>
     </dependency>
-    <dependency id="20004" label="use">
+    <dependency id="20004" label="">
       <source>17933</source>
       <target>17833</target>
     </dependency>
-    <dependency id="20003" label="use">
+    <dependency id="20003" label="">
       <source>17933</source>
       <target>17812</target>
     </dependency>
@@ -132,7 +192,6 @@
       </method>
     </entity>
     <entity entityType="CLASS" id="16647" isAbstract="false" name="Bouncers" visibility="PUBLIC">
-      <attribute const="false" defaultValue="" isStatic="false" name="bouncers" type="LinkedList" visibility="PRIVATE"/>
       <method is-constructor="true" isAbstract="false" isStatic="false" name="Bouncers" returnType="" view="DEFAULT" visibility="PUBLIC"/>
       <method isAbstract="false" isStatic="false" name="run" returnType="void" view="DEFAULT" visibility="PUBLIC"/>
       <method isAbstract="false" isStatic="false" name="main" returnType="void" view="DEFAULT" visibility="PUBLIC">
@@ -224,11 +283,11 @@
         <variable const="false" name="type" type="ShapeType"/>
       </method>
     </entity>
-    <entity entityType="CLASS" id="17933" isAbstract="false" name="HollowFactory" visibility="PUBLIC">
+    <entity entityType="CLASS" id="17933" isAbstract="false" name="SolidFactory" visibility="PUBLIC">
       <method isAbstract="false" isStatic="false" name="createSquare" returnType="Bouncable" view="DEFAULT" visibility="PUBLIC"/>
       <method isAbstract="false" isStatic="false" name="createCircle" returnType="Bouncable" view="DEFAULT" visibility="PUBLIC"/>
     </entity>
-    <entity entityType="CLASS" id="17954" isAbstract="false" name="SolidFactory" visibility="PUBLIC">
+    <entity entityType="CLASS" id="17954" isAbstract="false" name="HollowFactory" visibility="PUBLIC">
       <method isAbstract="false" isStatic="false" name="createSquare" returnType="Bouncable" view="DEFAULT" visibility="PUBLIC"/>
       <method isAbstract="false" isStatic="false" name="createCircle" returnType="Bouncable" view="DEFAULT" visibility="PUBLIC"/>
     </entity>
@@ -574,9 +633,9 @@
         </point>
       </line>
       <labelAssociation>
-        <x>790</x>
-        <y>695</y>
-        <w>22</w>
+        <x>757</x>
+        <y>708</y>
+        <w>0</w>
         <h>17</h>
       </labelAssociation>
     </relationView>
@@ -602,7 +661,7 @@
       <labelAssociation>
         <x>1065</x>
         <y>745</y>
-        <w>22</w>
+        <w>0</w>
         <h>17</h>
       </labelAssociation>
     </relationView>
@@ -628,7 +687,7 @@
       <labelAssociation>
         <x>820</x>
         <y>795</y>
-        <w>22</w>
+        <w>0</w>
         <h>17</h>
       </labelAssociation>
     </relationView>
@@ -662,6 +721,194 @@
         <h>17</h>
       </labelAssociation>
     </relationView>
+    <relationView color="-12566464" relationId="20017">
+      <line>
+        <point>
+          <x>391</x>
+          <y>621</y>
+        </point>
+        <point>
+          <x>391</x>
+          <y>521</y>
+        </point>
+        <point>
+          <x>411</x>
+          <y>521</y>
+        </point>
+      </line>
+      <labelAssociation>
+        <x>405</x>
+        <y>525</y>
+        <w>0</w>
+        <h>17</h>
+      </labelAssociation>
+      <roleAssociation>
+        <x>395</x>
+        <y>598</y>
+        <w>0</w>
+        <h>17</h>
+      </roleAssociation>
+      <roleAssociation>
+        <x>375</x>
+        <y>525</y>
+        <w>0</w>
+        <h>17</h>
+      </roleAssociation>
+      <multipliciteAssociation>
+        <x>377</x>
+        <y>598</y>
+        <w>8</w>
+        <h>17</h>
+      </multipliciteAssociation>
+      <multipliciteAssociation>
+        <x>397</x>
+        <y>498</y>
+        <w>8</w>
+        <h>17</h>
+      </multipliciteAssociation>
+    </relationView>
+    <relationView color="-12566464" relationId="20026">
+      <line>
+        <point>
+          <x>711</x>
+          <y>621</y>
+        </point>
+        <point>
+          <x>711</x>
+          <y>521</y>
+        </point>
+        <point>
+          <x>691</x>
+          <y>521</y>
+        </point>
+      </line>
+      <labelAssociation>
+        <x>715</x>
+        <y>575</y>
+        <w>0</w>
+        <h>17</h>
+      </labelAssociation>
+      <roleAssociation>
+        <x>715</x>
+        <y>598</y>
+        <w>0</w>
+        <h>17</h>
+      </roleAssociation>
+      <roleAssociation>
+        <x>695</x>
+        <y>525</y>
+        <w>0</w>
+        <h>17</h>
+      </roleAssociation>
+      <multipliciteAssociation>
+        <x>697</x>
+        <y>598</y>
+        <w>8</w>
+        <h>17</h>
+      </multipliciteAssociation>
+      <multipliciteAssociation>
+        <x>703</x>
+        <y>498</y>
+        <w>8</w>
+        <h>17</h>
+      </multipliciteAssociation>
+    </relationView>
+    <relationView color="-12566464" relationId="20083">
+      <line>
+        <point>
+          <x>381</x>
+          <y>311</y>
+        </point>
+        <point>
+          <x>321</x>
+          <y>311</y>
+        </point>
+        <point>
+          <x>321</x>
+          <y>671</y>
+        </point>
+        <point>
+          <x>361</x>
+          <y>671</y>
+        </point>
+      </line>
+      <labelAssociation>
+        <x>325</x>
+        <y>495</y>
+        <w>0</w>
+        <h>17</h>
+      </labelAssociation>
+      <roleAssociation>
+        <x>345</x>
+        <y>315</y>
+        <w>0</w>
+        <h>17</h>
+      </roleAssociation>
+      <roleAssociation>
+        <x>325</x>
+        <y>675</y>
+        <w>0</w>
+        <h>17</h>
+      </roleAssociation>
+      <multipliciteAssociation>
+        <x>367</x>
+        <y>288</y>
+        <w>8</w>
+        <h>17</h>
+      </multipliciteAssociation>
+      <multipliciteAssociation>
+        <x>347</x>
+        <y>648</y>
+        <w>8</w>
+        <h>17</h>
+      </multipliciteAssociation>
+    </relationView>
+    <relationView color="-12566464" relationId="20109">
+      <line>
+        <point>
+          <x>761</x>
+          <y>341</y>
+        </point>
+        <point>
+          <x>761</x>
+          <y>641</y>
+        </point>
+        <point>
+          <x>741</x>
+          <y>641</y>
+        </point>
+      </line>
+      <labelAssociation>
+        <x>765</x>
+        <y>495</y>
+        <w>0</w>
+        <h>17</h>
+      </labelAssociation>
+      <roleAssociation>
+        <x>765</x>
+        <y>345</y>
+        <w>0</w>
+        <h>17</h>
+      </roleAssociation>
+      <roleAssociation>
+        <x>745</x>
+        <y>618</y>
+        <w>0</w>
+        <h>17</h>
+      </roleAssociation>
+      <multipliciteAssociation>
+        <x>747</x>
+        <y>345</y>
+        <w>8</w>
+        <h>17</h>
+      </multipliciteAssociation>
+      <multipliciteAssociation>
+        <x>746</x>
+        <y>600</y>
+        <w>8</w>
+        <h>17</h>
+      </multipliciteAssociation>
+    </relationView>
     <componentView color="-2079" componentID="17954" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
         <x>360</x>
@@ -680,9 +927,9 @@
     </componentView>
     <componentView color="-2079" componentID="17908" displayAttributes="true" displayDefault="true" displayMethods="true">
       <geometry>
-        <x>460</x>
+        <x>410</x>
         <y>450</y>
-        <w>180</w>
+        <w>280</w>
         <h>100</h>
       </geometry>
     </componentView>
@@ -779,7 +1026,7 @@
         <x>1420</x>
         <y>70</y>
         <w>170</w>
-        <h>115</h>
+        <h>100</h>
       </geometry>
     </componentView>
     <componentView color="-2079" componentID="16646" displayAttributes="true" displayDefault="true" displayMethods="true">
@@ -806,24 +1053,14 @@
         <h>70</h>
       </geometry>
     </componentView>
-    <note color="-2079" content="Enum ShapeType  { HOLLOW, SOLID}">
-      <noteGeometry>
-        <x>680</x>
-        <y>450</y>
-        <w>120</w>
-        <h>45</h>
-      </noteGeometry>
-      <noteLine color="-12566464" relationId="17908">
-        <point>
-          <x>681</x>
-          <y>471</y>
-        </point>
-        <point>
-          <x>641</x>
-          <y>471</y>
-        </point>
-      </noteLine>
-    </note>
+    <componentView color="-2079" componentID="20043" enumValuesVisible="DEFAULT">
+      <geometry>
+        <x>90</x>
+        <y>580</y>
+        <w>150</w>
+        <h>89</h>
+      </geometry>
+    </componentView>
     <note color="-2079" content="Use of the singleton BouncerDisplayer">
       <noteGeometry>
         <x>1620</x>
@@ -841,6 +1078,14 @@
           <y>111</y>
         </point>
       </noteLine>
+    </note>
+    <note color="-2079" content="The factories call their respective renderers in their draw method">
+      <noteGeometry>
+        <x>800</x>
+        <y>380</y>
+        <w>100</w>
+        <h>105</h>
+      </noteGeometry>
     </note>
   </umlView>
 </classDiagram>

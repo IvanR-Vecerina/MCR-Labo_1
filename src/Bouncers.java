@@ -22,6 +22,7 @@ public class Bouncers {
         bouncers = new LinkedList<>();
 
         BouncerDisplayer.getInstance().setTitle("Labo 1c");
+        // Use method keyTyped() to only activate when you press and release a key
         BouncerDisplayer.getInstance().addKeyListener(new KeyAdapter() {
 
             @Override

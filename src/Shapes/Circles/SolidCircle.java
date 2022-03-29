@@ -9,7 +9,7 @@ import java.awt.*;
  */
 public class SolidCircle extends Circle {
     /**
-     * Constructor for the EquilateralMovingShape abstract class
+     * Constructor for the SolidCircle class
      *
      * @param renderer
      */

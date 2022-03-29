@@ -10,7 +10,7 @@ import java.awt.*;
  */
 public abstract class Square extends EquilateralMovingShape {
     /**
-     * Constructor for the EquilateralMovingShape abstract class
+     * Constructor for the Square abstract class
      *
      * @param renderer
      */
@@ -20,7 +20,7 @@ public abstract class Square extends EquilateralMovingShape {
 
     /**
      * Method to get shape
-     * @return The SolidSquare's shape
+     * @return The square's shape
      */
     @Override
     public Shape getShape() {

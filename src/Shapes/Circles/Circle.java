@@ -11,7 +11,7 @@ import java.awt.geom.Ellipse2D;
  */
 public abstract class Circle extends EquilateralMovingShape {
     /**
-     * Constructor for the EquilateralMovingShape abstract class
+     * Constructor for the circle abstract class
      *
      * @param renderer
      */
@@ -21,7 +21,7 @@ public abstract class Circle extends EquilateralMovingShape {
 
     /**
      * Method to get shape
-     * @return The HollowCircle shape
+     * @return The Circle shape
      */
     @Override
     public Shape getShape() {

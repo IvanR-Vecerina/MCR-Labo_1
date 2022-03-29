@@ -9,7 +9,7 @@ import java.awt.*;
  */
 public class HollowSquare extends Square {
     /**
-     * Constructor for the EquilateralMovingShape abstract class
+     * Constructor for the HollowSquare class
      *
      * @param renderer
      */

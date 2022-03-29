@@ -9,7 +9,7 @@ import java.awt.*;
  */
 public class HollowCircle extends Circle {
     /**
-     * Constructor for the EquilateralMovingShape abstract class
+     * Constructor for the HollowCircle class
      *
      * @param renderer
      */

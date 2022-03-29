@@ -46,7 +46,7 @@ public class Bouncers {
 
     /**
      * Method to add bouncable object in the application
-     * @param type Factory for the wanted type of shapes
+     * @param type For the wanted type of shape
      */
     private void spawnShapes(ShapeType type) {
         ShapeFactory shapeFactory = ShapeFactory.getFactory(type);

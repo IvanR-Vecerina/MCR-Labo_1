@@ -9,7 +9,7 @@ import java.awt.*;
  */
 public class SolidSquare extends Square {
     /**
-     * Constructor for the EquilateralMovingShape abstract class
+     * Constructor for the SolidSquare class
      *
      * @param renderer
      */

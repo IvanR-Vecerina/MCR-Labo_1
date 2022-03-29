@@ -1,20 +1,23 @@
 package Factories;
 
+import Renderer.HollowShapeRenderer;
 import Shapes.Bouncable;
-import Shapes.HollowShapes.HollowCircle;
-import Shapes.HollowShapes.HollowSquare;
+import Shapes.Circles.HollowCircle;
+import Shapes.Squares.HollowSquare;
 
 /**
  * @author André Marques Nora & Ivan Vecerina
  */
 public class HollowFactory extends ShapeFactory {
+    private static final HollowShapeRenderer HOLLOW_SHAPE_RENDERER = new HollowShapeRenderer();
+
     /**
      * Method to create a hollow square
      * @return A hollow square
      */
     @Override
     public Bouncable createSquare() {
-        return new HollowSquare();
+        return new HollowSquare(HOLLOW_SHAPE_RENDERER);
     }
 
     /**
@@ -23,6 +26,6 @@ public class HollowFactory extends ShapeFactory {
      */
     @Override
     public Bouncable createCircle() {
-        return new HollowCircle();
+        return new HollowCircle(HOLLOW_SHAPE_RENDERER);
     }
 }

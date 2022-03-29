@@ -1,4 +1,7 @@
-package Shapes.HollowShapes;
+package Shapes.Circles;
+
+import Renderer.Renderer;
+import Shapes.EquilateralMovingShape;
 
 import java.awt.*;
 import java.awt.geom.Ellipse2D;
@@ -6,14 +9,14 @@ import java.awt.geom.Ellipse2D;
 /**
  * @author André Marques Nora & Ivan Vecerina
  */
-public class HollowCircle extends HollowShape {
+public abstract class Circle extends EquilateralMovingShape {
     /**
-     * Method to get the HollowCircle's color
-     * @return The color of the circle
+     * Constructor for the EquilateralMovingShape abstract class
+     *
+     * @param renderer
      */
-    @Override
-    public Color getColor() {
-        return Color.GREEN;
+    protected Circle(Renderer renderer) {
+        super(renderer);
     }
 
     /**

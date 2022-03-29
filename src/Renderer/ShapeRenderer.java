@@ -7,7 +7,7 @@ import java.awt.*;
 /**
  * @author André Marques Nora & Ivan Vecerina
  */
-public class ShapeRenderer implements Renderer{
+public abstract class ShapeRenderer implements Renderer {
     /**
      * Method to display any type of shapes
      * @param g The graphic in which to display

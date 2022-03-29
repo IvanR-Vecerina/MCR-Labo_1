@@ -7,7 +7,7 @@ import java.awt.*;
 /**
  * @author André Marques Nora & Ivan Vecerina
  */
-public class HollowShapeRenderer extends ShapeRenderer{
+public class HollowShapeRenderer extends ShapeRenderer {
     /**
      * Method to display a hollow shape
      * @param g The graphic in which to display

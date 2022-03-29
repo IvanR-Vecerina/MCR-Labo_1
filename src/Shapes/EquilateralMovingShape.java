@@ -17,7 +17,7 @@ public abstract class EquilateralMovingShape implements Bouncable {
     /**
      * Constructor for the EquilateralMovingShape abstract class
      */
-    protected EquilateralMovingShape() {
+    protected EquilateralMovingShape(Renderer renderer) {
         int tmp = (int) (Math.random() * 40) + 10;
         size = new Dimension(tmp, tmp);
         position = new Point(
@@ -28,6 +28,7 @@ public abstract class EquilateralMovingShape implements Bouncable {
                 ((int) (Math.random() * 20) - 10),
                 ((int) (Math.random() * 20) - 10)
         );
+        this.renderer = renderer;
     }
 
     /**
@@ -65,7 +66,7 @@ public abstract class EquilateralMovingShape implements Bouncable {
     /**
      * Method to draw the shapes
      */
-    public void draw(){
+    public void draw() {
         renderer.display(BouncerDisplayer.getInstance().getGraphics(), this);
     }
 

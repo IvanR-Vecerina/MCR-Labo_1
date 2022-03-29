@@ -1,5 +1,6 @@
 import Display.BouncerDisplayer;
-import Factories.*;
+import Factories.ShapeFactory;
+import ShapeType.ShapeType;
 import Shapes.Bouncable;
 
 import javax.swing.*;
@@ -31,10 +32,10 @@ public class Bouncers {
                         bouncers.clear();
                         break;
                     case 'b':
-                        spawnShapes(new HollowFactory());
+                        spawnShapes(ShapeType.HOLLOW);
                         break;
                     case 'f':
-                        spawnShapes(new SolidFactory());
+                        spawnShapes(ShapeType.SOLID);
                         break;
                     case 'q':
                         System.exit(0);
@@ -45,9 +46,11 @@ public class Bouncers {
 
     /**
      * Method to add bouncable object in the application
-     * @param shapeFactory Factory for the wanted type of shapes
+     * @param type Factory for the wanted type of shapes
      */
-    private void spawnShapes(ShapeFactory shapeFactory) {
+    private void spawnShapes(ShapeType type) {
+        ShapeFactory shapeFactory = ShapeFactory.getFactory(type);
+
         for(int i = 0; i < 10; ++i){
             bouncers.add(shapeFactory.createCircle());
             bouncers.add(shapeFactory.createSquare());
@@ -58,7 +61,7 @@ public class Bouncers {
      * Method to start the application
      */
     public void run(){
-        new Timer(25, e -> {
+        new Timer(50, e -> {
             BouncerDisplayer.getInstance().repaint();
 
                 for (Bouncable bouncer : bouncers) {

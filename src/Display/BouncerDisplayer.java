@@ -35,9 +35,6 @@ public class BouncerDisplayer implements Displayer {
         frame.setVisible(true);
         frame.setSize(1280, 720);
         frame.setMinimumSize(new Dimension(256,144));
-
-        panel.setSize(1280, 720);
-        panel.setBackground(Color.WHITE);
     }
 
     /**

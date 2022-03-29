@@ -7,7 +7,7 @@ import java.awt.*;
 /**
  * @author André Marques Nora & Ivan Vecerina
  */
-public class SolidShapeRenderer extends ShapeRenderer{
+public class SolidShapeRenderer extends ShapeRenderer {
     /**
      * Method to display a filled shape
      * @param g The graphic in which to display

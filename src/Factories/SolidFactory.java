@@ -1,20 +1,23 @@
 package Factories;
 
+import Renderer.SolidShapeRenderer;
 import Shapes.Bouncable;
-import Shapes.SolidShapes.SolidCircle;
-import Shapes.SolidShapes.SolidSquare;
+import Shapes.Circles.SolidCircle;
+import Shapes.Squares.SolidSquare;
 
 /**
  * @author André Marques Nora & Ivan Vecerina
  */
 public class SolidFactory extends ShapeFactory{
+    private static final SolidShapeRenderer SOLID_SHAPE_RENDERER = new SolidShapeRenderer();
+
     /**
      * Method to create a filled square
      * @return A filled square
      */
     @Override
     public Bouncable createSquare() {
-        return new SolidSquare();
+        return new SolidSquare(SOLID_SHAPE_RENDERER);
     }
 
     /**
@@ -23,6 +26,6 @@ public class SolidFactory extends ShapeFactory{
      */
     @Override
     public Bouncable createCircle() {
-        return new SolidCircle();
+        return new SolidCircle(SOLID_SHAPE_RENDERER);
     }
 }
